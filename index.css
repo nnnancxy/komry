@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -8,6 +8,8 @@
 
 body {
     background-color: #f9f7fd;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--shrift);
 }
 
 a {
@@ -33,6 +35,7 @@ img {
     --yellow-btn: #ffdc22;
     --blue-btn: #0c77e2;
     --logo-text-col: #222222;
+    --border-col: #d4d9dc;
     --shrift: 'Alegreya', Times, serif;
 }
 
@@ -529,21 +532,18 @@ header {
     align-items: center;
     box-sizing: border-box;
     cursor: pointer;
-    /* margin-left: auto; */
 }
 
 .log-in span svg {
     display: flex;
     width: 30px;
     height: 30px;
-    /* stroke: #000; */
     fill: #222222;
     stroke-width: 1;
     transition: 0.2s;
 }
 
-.log-in:hover span svg{
-    /* stroke: var(--blue-btn); */
+.log-in:hover span svg {
     fill: var(--blue-btn);
 }
 
@@ -882,7 +882,7 @@ main {
 }
 
 .time-and-date a {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', "Roboto", Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     font-size: 9px;
     line-height: 11px;
@@ -956,7 +956,7 @@ footer {
 .nav-soci-wrap {
     align-items: center;
     -webkit-box-align: center;
-    border-bottom: 1px solid #d4d9dc;
+    border-bottom: 1px solid var(--border-col);
     display: flex;
     flex-direction: row;
     -webkit-box-pack: justify;
@@ -1052,13 +1052,13 @@ footer {
 
 .info-wr {
     display: grid;
-    grid-template-columns: 50% 45%;
+    grid-template-columns: 55% 45%;
     gap: 32px;
     padding: 32px 0;
 }
 
 .info-menu {
-    border-right: 1px solid #d4d9dc;
+    border-right: 1px solid var(--border-col);
     flex: 0.5 1 0%;
     width: 100%;
 }
@@ -1078,7 +1078,7 @@ footer {
     position: relative;
     text-transform: uppercase;
     width: 100px;
-    margin-top: 15px;
+    font-family: var(--shrift);
 }
 
 .menu-rubriki::before {
@@ -1116,18 +1116,34 @@ footer {
     width: 100%;
 }
 
-.info-sub-text {
+.odin-div {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.sub-text-inner {
-    border-bottom: 1px solid #d4d9dc;
+.info-sub-text {
+    border-bottom: 1px solid var(--border-col);
     display: flex;
     flex-direction: row;
     padding-bottom: 20px;
 }
+/* .info-sub-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} */
+
+.sub-text-inner {
+    display: flex;
+    flex-direction: column;
+}
+/* .sub-text-inner {
+    border-bottom: 1px solid var(--border-col);
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+} */
 
 .objedenitel {
     display: flex;
@@ -1170,14 +1186,11 @@ footer {
     line-height: 20px;
     font-weight: 500;
     font-size: 16px;
+    font-family: var(--shrift);
 }
 
 .app-links {
     flex: 1 1 0%;
-}
-
-.app-links-wr {
-
 }
 
 .app-links-content {
@@ -1224,11 +1237,22 @@ footer {
     text-align: left;
     display: flex;
 }
+/* 
+.info-sub-btns {
+    width: 100%;
+    padding-top: 28px;
+    text-align: left;
+    display: flex;
+} */
+
+.info-sub-btn:not(:first-child) {
+    margin-left: 20px;
+}
 
 .info-sub-btn button {
+    height: 40px;
     overflow: hidden;
     position: relative;
-    height: 40px;
     box-sizing: border-box;
     border-radius: 3px;
     display: inline-flex;
@@ -1240,7 +1264,7 @@ footer {
     border: 1px solid transparent;
     cursor: pointer;
     white-space: nowrap;
-    font-family: Roboto, Tahoma, sans-serif;
+    font-family: "Roboto", Tahoma, sans-serif;
     font-weight: 700;
     font-size: 13px;
     line-height: 14px;
@@ -1268,7 +1292,10 @@ footer {
     flex-direction: row;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    flex: 1 1 0%;
+}
+
+.info-b-inner > * {
+    flex-shrink: 0;
 }
 
 .info-b-inner::before {
@@ -1289,6 +1316,10 @@ footer {
     background: url(./assets/hueta.svg);    
 }
 
+.info-b-inner span {
+    flex: 1 1 0%;
+}
+
 .design-otjima {
     padding-top: 28px;
     text-align: left;
@@ -1296,7 +1327,7 @@ footer {
 }
 
 .design-otjima span {
-    font-family:  Roboto, Tahoma ,sans-serif;
+    font-family:  "Roboto", Tahoma ,sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
@@ -1321,6 +1352,94 @@ footer {
 /* //////////////////////////////////////////// */
 /* //////////////////////////////////////////// */
 
+
+.foot {
+    color: var(--white-text);
+    background: var(--fmbc);
+    font-family: 'Roboto', Tahoma, sans-serif;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 11px;
+    text-transform: uppercase;
+}
+
+.foot-wrap-padding {
+    padding: 32px 0;
+}
+
+.foot-sub-wrap {
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.foot-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    flex-direction: row;
+}
+
+.foot-redact {
+    display: flex;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-direction: row;
+    flex: 0 0 53%;
+}
+
+.foot18 {
+    flex: 0 0 auto;
+    min-width: 75px;
+    width: 150px;
+    font-family: Tahoma;
+}
+
+.foot18::before {
+    content: "18+";
+    border: 2px solid var(--white-text);
+    box-sizing: border-box;
+    color: var(--white-text);
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: bold;
+    height: 46px;
+    width: 46px;
+}
+
+.foot-under18 {
+    padding-left: 20px;
+}
+
+.foot-red-text {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Roboto', Tahoma, sans-serif;
+}
+
+.foot-rights {
+    padding-left: 66px;
+    flex: 1 1 0%;
+}
+
+.foot-rights-text {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Roboto', Tahoma, sans-serif;
+}
+
+.foot-rights-text a {
+    color: var(--white-text);
+    text-decoration: underline;
+    font-family: 'Roboto', Tahoma, sans-serif;
+}
 
 @media (min-width: 476px) {
 
@@ -1392,10 +1511,83 @@ footer {
         align-items: flex-start;
     }
     .socialki {
-        border-top: 1px solid #d4d9dc;
+        border-top: 1px solid var(--border-col);
         margin-top: 30px;
         padding-top: 25px;
         width: 100%;
+    }
+    .socisok {
+        grid-auto-flow: row;
+    }
+    .info-sub-btns {
+        border-bottom: 1px solid var(--border-col);
+        text-align: center;
+        flex-flow: column;
+    }
+    .info-subs {
+        padding-left: 0;
+    }
+    .odin-div {
+        flex-direction: column-reverse;
+    }
+    .info-sub-btn:not(:first-child) {
+        margin-left: 0;
+    }
+    .info-sub-btn button {
+        margin-left: 0;
+        padding: 0 18px;
+        margin-bottom: 25px;
+        width: 100%;
+    } 
+    .info-b-inner {
+        flex-direction: row-reverse;
+        width: 100%;
+    }
+    .info-b-inner::before {
+        margin-right: 0;
+    }
+    .info-b-inner span {
+        text-align: center;
+    }
+    .info-b-inner span::after {
+        content: "";
+        bottom: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60px;
+        z-index: 2;
+    }
+    .yellow-btn span::after {
+        background-color: #f8c124;
+    }
+    .blue-btn span::after {
+        background-color: #0566c7;
+    }
+    .zagolovok, .app-link-zagolovok {
+        font-size: 11px;
+        width: 70px;
+        line-height: 12px;
+    }
+    .design-otjima {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 0;
+    }
+    .foot > div {
+        width: 100%;
+        padding: 20px;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    .menu-wrap {
+        column-gap: 16px;
+    }
+    .menu-rubriki {
+        width: 70px;
+        font-size: 11px;
+        line-height: 12px;
     }
 }
 
@@ -1425,6 +1617,47 @@ footer {
         margin: 0 auto;
         padding: 20px 0;
     }
+    .info {
+        padding: 0 10px;
+    }
+    .info-wr {
+        display: block;
+        max-width: 610px;
+        margin: 0 auto;
+    }
+    .info-menu {
+        grid-template-columns: 100%;
+        border-bottom: 1px solid var(--border-col);
+        border-right: 0;
+        /* border-right-width: medium;
+        border-right-style: 0; */
+        /* flex: 0.5 1 0%; */
+    }
+    .menu-wrap {
+        margin-bottom: 20px;
+    }
+    .info-subs {
+        max-width: 610px;
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+    }
+    .objedenitel {
+        padding-top: 20px;
+    }
+    .sub-text-inner {
+        padding-top: 20px;
+    }
+    .design-otjima span {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    .foot > div {
+        max-width: 737px;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 1278px) {
@@ -1444,9 +1677,53 @@ footer {
         border-left: 0;
         margin-left: 0;
     }
+    .info-wr {
+        grid-template-columns: 45% 55%;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .menu-wrap {
+        -webkit-box-pack: center;
+        justify-content: center;
+        max-width: 610px;
+    }
+    .odin-div {
+        max-width: 610px;
+    }
+    .info-sub-text {
+        justify-content: center;
+        -webkit-box-pack: center;
+    }
+    /* .info-sub-text {
+        min-width: 610px;
+    } */
+    .sub-text-inner {
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+    /* .info-sub-btns {
+        min-width: 610px;
+    } */
+    .info-sub-btns {
+        max-width: 610px;
+    }
+    .design-otjima {
+        min-width: 610px;
+        width: 100%;
+        padding-bottom: 25px;
+    }
 }
 
-@media (min-width: 1279px) {
-    /* ПОЯВЛЯЕТСЯ СИНЕЕ(ДЕСКТОПНОЕ) МЕНЮ, МЕНЯЕТСЯ ШРИФТ В КРАСНОМ МЕНЮ. В БЕЛОМ МЕНЮ ПОЯВЛЯЮТСЯ ЛОГОТИПЫ */
+@media (max-width: 1279px) {
+    .foot-sub-wrap {
+        padding: 0;
+    }
+    .foot-inner {
+        flex-direction: column;
+    }
+    .foot18 {
+        min-width: 46px;
+        width: 46px;
+    }
 }
 
